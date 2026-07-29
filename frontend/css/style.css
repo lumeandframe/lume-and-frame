@@ -81,3 +81,65 @@ body {
     opacity: 0.85;
 
 }
+.navigation {
+
+    margin-top: 80px;
+
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+
+    opacity: 0;
+
+    animation:
+        navigationReveal 2s ease forwards;
+
+    animation-delay: 3s;
+}
+
+
+.navigation a {
+
+    color: var(--ivory);
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    letter-spacing: 5px;
+
+    transition: opacity .4s ease;
+
+}
+
+
+.navigation a:hover {
+
+    opacity: .5;
+
+}
+
+
+
+@keyframes navigationReveal {
+
+    from {
+
+        opacity:0;
+
+        transform:
+        translateY(20px);
+
+    }
+
+
+    to {
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+
+    }
+
+}
