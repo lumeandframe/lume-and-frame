@@ -15,5 +15,17 @@ document.addEventListener(
       "LUME & FRAME — Luce. Forma. Silenzio."
     );
 
+
+    fetch("components/navigation.html")
+      .then(response => response.text())
+      .then(data => {
+
+        document.getElementById(
+          "navigation-container"
+        ).innerHTML = data;
+
+      });
+
+
   }
 );
