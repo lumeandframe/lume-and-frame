@@ -152,14 +152,15 @@ Luce. Forma. Silenzio.
 ========================================
 */
 
-
 .navigation {
 
     position: absolute;
 
-    bottom: 120px;
+    bottom: 110px;
 
     left: 50%;
+
+    width: max-content;
 
     transform: translateX(-50%);
 
@@ -167,7 +168,34 @@ Luce. Forma. Silenzio.
 
     gap: 70px;
 
-    z-index: 10;
+    z-index: 20;
+
+}
+
+
+.navigation a {
+
+    color: #F8F6F2;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    letter-spacing: 0.45em;
+
+    font-weight: 300;
+
+    opacity: 0.8;
+
+    transition:
+        opacity 0.4s ease;
+
+}
+
+
+.navigation a:hover {
+
+    opacity: 1;
 
 }
 
