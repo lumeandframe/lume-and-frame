@@ -168,3 +168,50 @@ Navigation movement
     }
 
 }
+/*
+----------------------------------------
+Navigation reveal
+----------------------------------------
+*/
+
+
+.navigation {
+
+    opacity: 0;
+
+    transform:
+        translate(-50%, 20px);
+
+    animation:
+        revealNavigation 2s ease forwards;
+
+    animation-delay:
+        3s;
+
+}
+
+
+
+@keyframes revealNavigation {
+
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translate(-50%, 20px);
+
+    }
+
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%, 0);
+
+    }
+
+}
