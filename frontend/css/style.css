@@ -143,3 +143,57 @@ body {
     }
 
 }
+/*
+========================================
+LUME & FRAME
+Navigation Layout
+
+Luce. Forma. Silenzio.
+========================================
+*/
+
+
+.navigation {
+
+    position: absolute;
+
+    bottom: 120px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    gap: 70px;
+
+    z-index: 10;
+
+}
+
+
+.navigation a {
+
+    color: #F8F6F2;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    letter-spacing: 0.45em;
+
+    font-weight: 300;
+
+    opacity: 0.8;
+
+    transition:
+        opacity 0.4s ease;
+
+}
+
+
+.navigation a:hover {
+
+    opacity: 1;
+
+}
