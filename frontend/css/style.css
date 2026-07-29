@@ -1,6 +1,6 @@
 /* ==================================================
    LUME & FRAME
-   The Entrance — Version 01
+   The Entrance — Version 02
 
    Luce. Forma. Silenzio.
 ================================================== */
@@ -16,6 +16,11 @@
 }
 
 
+/* ==================================================
+   RESET
+================================================== */
+
+
 * {
 
     margin: 0;
@@ -28,6 +33,7 @@
 body {
 
     background: var(--navy);
+
     color: var(--ivory);
 
     font-family:
@@ -39,14 +45,23 @@ body {
 }
 
 
+/* ==================================================
+   ENTRANCE HERO
+================================================== */
+
+
 .entrance {
 
     width: 100%;
     height: 100vh;
 
     display: flex;
+
     justify-content: center;
+
     align-items: center;
+
+    position: relative;
 
 }
 
@@ -58,16 +73,32 @@ body {
 }
 
 
+/* ==================================================
+   LOGO
+================================================== */
+
+
 .hero h1 {
-white-space: nowrap;
-    font-size: clamp(2rem, 5vw, 5rem);
+
+    white-space: nowrap;
+
+    font-size:
+        clamp(2rem, 5vw, 5rem);
 
     letter-spacing:
         0.35em;
 
     font-weight: 300;
 
+    color: var(--ivory);
+
 }
+
+
+/* ==================================================
+   TAGLINE
+================================================== */
+
 
 .tagline {
 
@@ -78,150 +109,111 @@ white-space: nowrap;
     letter-spacing:
         0.5em;
 
-    opacity: 0.85;
+    color:
+        rgba(248,246,242,0.65);
 
 }
+
+
+/* ==================================================
+   NAVIGATION
+================================================== */
+
+
 .navigation {
 
-    margin-top: 80px;
+    position: absolute;
+
+    bottom: 14%;
+
+    left: 50%;
+
+    width: max-content;
+
+    transform:
+        translateX(-50%);
 
     display: flex;
+
     justify-content: center;
-    gap: 60px;
+
+    gap: 70px;
+
+    z-index: 20;
+
 
     opacity: 0;
+
 
     animation:
         navigationReveal 2s ease forwards;
 
+
     animation-delay: 3s;
+
 }
+
 
 
 .navigation a {
 
-    color: var(--ivory);
+    color:
+        rgba(248,246,242,0.8);
+
 
     text-decoration: none;
 
+
     font-size: 12px;
 
-    letter-spacing: 5px;
 
-    transition: opacity .4s ease;
+    letter-spacing:
+        0.45em;
+
+
+    font-weight: 300;
+
+
+    transition:
+        opacity 0.4s ease;
 
 }
+
 
 
 .navigation a:hover {
 
-    opacity: .5;
+    opacity: 0.5;
 
 }
 
 
+/* ==================================================
+   NAVIGATION REVEAL
+================================================== */
+
 
 @keyframes navigationReveal {
 
+
     from {
 
-        opacity:0;
+        opacity: 0;
 
         transform:
-        translateY(20px);
+            translate(-50%,20px);
 
     }
 
 
     to {
 
-        opacity:1;
+        opacity: 1;
 
         transform:
-        translateY(0);
+            translate(-50%,0);
 
     }
 
-}
-/*
-========================================
-LUME & FRAME
-Navigation Layout
-
-Luce. Forma. Silenzio.
-========================================
-*/
-
-.navigation {
-
-    position: absolute;
-
-    bottom: 110px;
-
-    left: 50%;
-
-    width: max-content;
-
-    transform: translateX(-50%);
-
-    display: flex;
-
-    gap: 70px;
-
-    z-index: 20;
-
-}
-
-
-.navigation a {
-
-    color: #F8F6F2;
-
-    text-decoration: none;
-
-    font-size: 12px;
-
-    letter-spacing: 0.45em;
-
-    font-weight: 300;
-
-    opacity: 0.8;
-
-    transition:
-        opacity 0.4s ease;
-
-}
-
-
-.navigation a:hover {
-
-    opacity: 1;
-
-}
-
-
-.navigation a {
-
-    color: #F8F6F2;
-
-    text-decoration: none;
-
-    font-size: 12px;
-
-    letter-spacing: 0.45em;
-
-    font-weight: 300;
-
-    opacity: 0.8;
-
-    transition:
-        opacity 0.4s ease;
-
-}
-
-
-.navigation a:hover {
-
-    opacity: 1;
 
 }
