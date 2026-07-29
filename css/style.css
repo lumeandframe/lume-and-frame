@@ -1,0 +1,83 @@
+/* ==================================================
+   LUME & FRAME
+   The Entrance — Version 01
+
+   Luce. Forma. Silenzio.
+================================================== */
+
+
+:root {
+
+    --navy: #1C2A39;
+    --ivory: #F8F6F2;
+    --charcoal: #2B2B2B;
+    --gold: #C9A227;
+
+}
+
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+body {
+
+    background: var(--navy);
+    color: var(--ivory);
+
+    font-family:
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif;
+
+}
+
+
+.entrance {
+
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.hero {
+
+    text-align: center;
+
+}
+
+
+.hero h1 {
+
+    font-size: clamp(2rem, 5vw, 5rem);
+
+    letter-spacing:
+        0.35em;
+
+    font-weight: 300;
+
+}
+
+.tagline {
+
+    margin-top: 40px;
+
+    font-size: 1.1rem;
+
+    letter-spacing:
+        0.5em;
+
+    opacity: 0.85;
+
+}
