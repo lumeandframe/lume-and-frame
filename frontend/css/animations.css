@@ -116,3 +116,55 @@ Tagline movement
     }
 
 }
+/*
+----------------------------------------
+Navigation reveal
+----------------------------------------
+*/
+
+
+.navigation {
+
+    opacity: 0;
+
+    animation:
+        revealNavigation
+        2s ease forwards;
+
+    animation-delay:
+        3s;
+
+}
+
+
+
+/*
+----------------------------------------
+Navigation movement
+----------------------------------------
+*/
+
+
+@keyframes revealNavigation {
+
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+
+    }
+
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
