@@ -1,0 +1,118 @@
+/*
+========================================
+LUME & FRAME
+Entrance Experience Animation
+Version 01
+
+Luce. Forma. Silenzio.
+========================================
+*/
+
+
+/* 
+----------------------------------------
+Initial hidden state
+----------------------------------------
+*/
+
+.hero h1,
+.hero .tagline {
+    opacity: 0;
+}
+
+
+/*
+----------------------------------------
+Main title reveal
+----------------------------------------
+*/
+
+.hero h1 {
+
+    animation:
+        revealTitle 2.2s ease forwards;
+
+}
+
+
+/*
+----------------------------------------
+Tagline reveal
+----------------------------------------
+*/
+
+.hero .tagline {
+
+    animation:
+        revealTagline 2s ease forwards;
+
+    animation-delay:
+        1.2s;
+
+}
+
+
+/*
+----------------------------------------
+Title movement
+----------------------------------------
+*/
+
+@keyframes revealTitle {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+
+        letter-spacing:
+            0.8em;
+
+    }
+
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+        letter-spacing:
+            0.45em;
+
+    }
+
+}
+
+
+/*
+----------------------------------------
+Tagline movement
+----------------------------------------
+*/
+
+@keyframes revealTagline {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(15px);
+
+    }
+
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
