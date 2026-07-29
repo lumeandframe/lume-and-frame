@@ -1,0 +1,36 @@
+/* ==================================================
+   LUME & FRAME
+   Global Visual Foundation
+
+   Luce. Forma. Silenzio.
+================================================== */
+
+:root {
+
+  --navy: #1C2A39;
+  --ivory: #F8F6F2;
+  --charcoal: #2B2B2B;
+  --gold: #C9A227;
+
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+
+  background: var(--ivory);
+  color: var(--charcoal);
+
+  font-family:
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif;
+
+}
