@@ -59,7 +59,7 @@ body {
 
 
 .hero h1 {
-
+white-space: nowrap;
     font-size: clamp(2rem, 5vw, 5rem);
 
     letter-spacing:
