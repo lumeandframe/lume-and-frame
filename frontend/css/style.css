@@ -106,10 +106,9 @@ body {
 
     letter-spacing: 0.05em;
 
-    animation:
-        logoReveal 5s ease forwards;
+    animation: logoReveal 3.2s ease forwards;
 
-    animation-delay: 1.8s;
+animation-delay: 0.8s;
 
 }
 
@@ -132,10 +131,9 @@ body {
 
     opacity: 0;
 
-    animation:
-        taglineReveal 3s ease forwards;
+    animation: taglineReveal 1.8s ease forwards;
 
-    animation-delay: 6.3s;
+animation-delay: 3.4s;
 
 }
 
@@ -167,10 +165,9 @@ body {
     transform:
         translate(-50%, 25px);
 
-    animation:
-        navigationReveal 2.8s ease forwards;
+    animation: navigationReveal 1.4s ease forwards;
 
-    animation-delay: 9.2s;
+animation-delay: 4.8s;
 
 }
 
