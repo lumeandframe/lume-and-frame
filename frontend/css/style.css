@@ -1,6 +1,6 @@
 /* ==================================================
    LUME & FRAME
-   The Entrance — Version 07
+   The Entrance — Version 08
    Warm Moonlight Passage
 
    Luce. Forma. Silenzio.
@@ -93,6 +93,56 @@ body {
 
     padding: 32px;
 
+    isolation: isolate;
+
+}
+
+
+/* ==================================================
+   AMBIENT MOONLIGHT
+================================================== */
+
+
+.entrance::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width:
+        min(1050px, 94vw);
+
+    height:
+        min(520px, 56vh);
+
+    pointer-events: none;
+
+    z-index: 0;
+
+    opacity: 1;
+
+    transform:
+        translate(-50%, -48%);
+
+    background:
+        radial-gradient(
+            ellipse at center,
+
+            rgba(241, 228, 188, 0.14) 0%,
+
+            rgba(220, 203, 150, 0.085) 28%,
+
+            rgba(237, 242, 247, 0.045) 52%,
+
+            transparent 76%
+        );
+
+    filter:
+        blur(22px);
+
 }
 
 
@@ -103,7 +153,18 @@ body {
 
 .hero {
 
+    position: relative;
+
+    z-index: 2;
+
     width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
 
     text-align: center;
 
@@ -220,11 +281,11 @@ body {
 
     position: absolute;
 
-    top: 0;
-    left: -45%;
+    top: -30%;
+    left: -70%;
 
-    width: 24%;
-    height: 100%;
+    width: 52%;
+    height: 160%;
 
     pointer-events: none;
 
@@ -236,30 +297,30 @@ body {
 
             transparent 0%,
 
-            rgba(220, 203, 150, 0.04) 28%,
+            rgba(220, 203, 150, 0.10) 18%,
 
-            rgba(220, 203, 150, 0.18) 41%,
+            rgba(220, 203, 150, 0.36) 37%,
 
-            rgba(241, 228, 188, 0.78) 50%,
+            rgba(241, 228, 188, 1) 50%,
 
-            rgba(220, 203, 150, 0.18) 59%,
+            rgba(220, 203, 150, 0.36) 63%,
 
-            rgba(220, 203, 150, 0.04) 72%,
+            rgba(220, 203, 150, 0.10) 82%,
 
             transparent 100%
         );
 
     filter:
-        blur(2px);
+        blur(4px);
 
     transform:
-        skewX(-18deg);
+        skewX(-16deg);
 
     mix-blend-mode:
         screen;
 
     animation:
-        taglineLightSweep 2.6s
+        taglineLightSweep 3.4s
         cubic-bezier(0.22, 0.61, 0.36, 1)
         forwards;
 
@@ -446,37 +507,44 @@ body {
 
     0% {
 
-        left: -45%;
+        left: -70%;
 
         opacity: 0;
 
     }
 
 
-    14% {
+    12% {
 
-        opacity: 0.22;
-
-    }
-
-
-    34% {
-
-        opacity: 0.78;
+        opacity: 0.42;
 
     }
 
 
-    68% {
+    32% {
 
-        opacity: 0.62;
+        opacity: 1;
+
+    }
+
+
+    66% {
+
+        opacity: 0.84;
+
+    }
+
+
+    88% {
+
+        opacity: 0.32;
 
     }
 
 
     100% {
 
-        left: 120%;
+        left: 130%;
 
         opacity: 0;
 
@@ -525,6 +593,20 @@ body {
 
         padding:
             24px 18px;
+
+    }
+
+
+    .entrance::before {
+
+        width:
+            min(820px, 96vw);
+
+        height:
+            min(430px, 52vh);
+
+        filter:
+            blur(20px);
 
     }
 
@@ -594,6 +676,19 @@ body {
 
 
 @media (max-width: 560px) {
+
+    .entrance::before {
+
+        width: 98vw;
+        height: 360px;
+
+        opacity: 0.88;
+
+        filter:
+            blur(18px);
+
+    }
+
 
     .hero h1 {
 
