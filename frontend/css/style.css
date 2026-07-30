@@ -1,7 +1,7 @@
 /* ==================================================
    LUME & FRAME
-   The Entrance — Version 08
-   Warm Moonlight Passage
+   The Entrance — Version 09
+   Museum Silence
 
    Luce. Forma. Silenzio.
 ================================================== */
@@ -19,14 +19,16 @@
     --moon: #EDF2F7;
 
     --moon-soft:
-        rgba(237, 242, 247, 0.58);
+        rgba(237, 242, 247, 0.54);
 
     --moon-whisper:
-        rgba(237, 242, 247, 0.22);
+        rgba(237, 242, 247, 0.24);
 
-    --moon-gold: #DCCB96;
+    --moon-gold:
+        #DCCB96;
 
-    --moon-gold-bright: #F1E4BC;
+    --moon-gold-bright:
+        #F1E4BC;
 
 }
 
@@ -69,6 +71,12 @@ body {
         Arial,
         sans-serif;
 
+    -webkit-font-smoothing:
+        antialiased;
+
+    text-rendering:
+        geometricPrecision;
+
 }
 
 
@@ -91,57 +99,14 @@ body {
     justify-content: center;
     align-items: center;
 
-    padding: 32px;
-
-    isolation: isolate;
-
-}
-
-
-/* ==================================================
-   AMBIENT MOONLIGHT
-================================================== */
-
-
-.entrance::before {
-
-    content: "";
-
-    position: absolute;
-
-    top: 50%;
-    left: 50%;
-
-    width:
-        min(1050px, 94vw);
-
-    height:
-        min(520px, 56vh);
-
-    pointer-events: none;
-
-    z-index: 0;
-
-    opacity: 1;
-
-    transform:
-        translate(-50%, -48%);
+    padding:
+        32px;
 
     background:
-        radial-gradient(
-            ellipse at center,
+        var(--navy);
 
-            rgba(241, 228, 188, 0.14) 0%,
-
-            rgba(220, 203, 150, 0.085) 28%,
-
-            rgba(237, 242, 247, 0.045) 52%,
-
-            transparent 76%
-        );
-
-    filter:
-        blur(22px);
+    isolation:
+        isolate;
 
 }
 
@@ -169,47 +134,48 @@ body {
     text-align: center;
 
     transform:
-        translateY(24px);
+        translateY(18px);
 
 }
 
 
 /* ==================================================
-   LOGO
+   BRAND MARK
 ================================================== */
 
 
-.hero h1 {
-
-    white-space: nowrap;
+.hero-title {
 
     display: inline-flex;
 
     justify-content: center;
     align-items: center;
 
+    white-space: nowrap;
+
     font-size:
-        clamp(2rem, 5vw, 5rem);
+        clamp(2rem, 4.75vw, 4.9rem);
 
     font-weight: 300;
 
-    color: var(--moon);
+    line-height: 1;
 
-    letter-spacing: 0.05em;
+    color:
+        var(--moon);
 
     opacity: 0;
 
     text-shadow:
-        0 0 10px rgba(255, 255, 255, 0.025),
-        0 0 24px rgba(255, 255, 255, 0.020),
-        0 0 48px rgba(255, 255, 255, 0.012);
+        0 0 14px
+        rgba(237, 242, 247, 0.018);
 
     animation:
-        logoReveal 3.2s
+        logoReveal 3.4s
         cubic-bezier(0.22, 1, 0.36, 1)
         forwards;
 
-    animation-delay: 0.8s;
+    animation-delay:
+        0.8s;
 
 }
 
@@ -218,6 +184,17 @@ body {
 
     display: inline-block;
 
+    letter-spacing:
+        0.48em;
+
+}
+
+
+.brand-word:last-child {
+
+    margin-right:
+        -0.48em;
+
 }
 
 
@@ -225,13 +202,17 @@ body {
 
     display: inline-block;
 
-    margin-left: 0.58em;
-    margin-right: 0.58em;
+    margin-left:
+        0.82em;
+
+    margin-right:
+        0.82em;
+
+    font-weight:
+        300;
 
     color:
-        rgba(237, 242, 247, 0.62);
-
-    opacity: 0.42;
+        rgba(237, 242, 247, 0.48);
 
 }
 
@@ -247,84 +228,73 @@ body {
 
     display: inline-block;
 
-    margin-top: 42px;
+    margin-top:
+        44px;
 
-    overflow: hidden;
+    white-space:
+        nowrap;
 
     font-size:
-        clamp(0.72rem, 1.15vw, 1rem);
+        clamp(0.7rem, 1vw, 0.94rem);
 
-    font-weight: 300;
+    font-weight:
+        300;
 
-    letter-spacing: 0.55em;
+    line-height:
+        1.4;
 
-    color: var(--moon-whisper);
+    letter-spacing:
+        0.48em;
 
-    opacity: 0;
+    opacity:
+        0;
 
-    animation:
-        taglineReveal 1.6s ease forwards;
+    color:
+        transparent;
 
-    animation-delay: 3.6s;
-
-}
-
-
-/* ==================================================
-   TAGLINE — WARM MOONLIGHT PASSAGE
-================================================== */
-
-
-.tagline::after {
-
-    content: "";
-
-    position: absolute;
-
-    top: -30%;
-    left: -70%;
-
-    width: 52%;
-    height: 160%;
-
-    pointer-events: none;
-
-    opacity: 0;
-
-    background:
+    background-image:
         linear-gradient(
-            100deg,
+            90deg,
 
-            transparent 0%,
+            rgba(237, 242, 247, 0.24) 0%,
 
-            rgba(220, 203, 150, 0.10) 18%,
+            rgba(237, 242, 247, 0.24) 39%,
 
-            rgba(220, 203, 150, 0.36) 37%,
+            rgba(220, 203, 150, 0.48) 46%,
 
-            rgba(241, 228, 188, 1) 50%,
+            rgba(241, 228, 188, 0.95) 50%,
 
-            rgba(220, 203, 150, 0.36) 63%,
+            rgba(220, 203, 150, 0.48) 54%,
 
-            rgba(220, 203, 150, 0.10) 82%,
+            rgba(237, 242, 247, 0.24) 61%,
 
-            transparent 100%
+            rgba(237, 242, 247, 0.24) 100%
         );
 
-    filter:
-        blur(4px);
+    background-size:
+        260% 100%;
 
-    transform:
-        skewX(-16deg);
+    background-position:
+        125% center;
 
-    mix-blend-mode:
-        screen;
+    background-repeat:
+        no-repeat;
+
+    -webkit-background-clip:
+        text;
+
+    background-clip:
+        text;
 
     animation:
-        taglineLightSweep 3.4s
+        taglineReveal 1.6s ease forwards,
+        taglineMoonlight 3.8s
         cubic-bezier(0.22, 0.61, 0.36, 1)
         forwards;
 
-    animation-delay: 4.8s;
+    animation-delay:
+        3.8s,
+        4.9s;
 
 }
 
@@ -339,7 +309,9 @@ body {
     position: absolute;
 
     left: 50%;
-    bottom: 14%;
+    bottom: 13%;
+
+    z-index: 20;
 
     width: max-content;
 
@@ -348,38 +320,48 @@ body {
     justify-content: center;
     align-items: center;
 
-    gap: 70px;
+    gap:
+        68px;
 
-    z-index: 20;
-
-    opacity: 0;
+    opacity:
+        0;
 
     transform:
-        translate(-50%, 25px);
+        translate(-50%, 18px);
 
     animation:
-        navigationReveal 1.6s ease forwards;
+        navigationReveal 1.8s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        forwards;
 
-    animation-delay: 7.6s;
+    animation-delay:
+        8.1s;
 
 }
 
 
 .navigation a {
 
-    color: var(--moon-soft);
+    position: relative;
 
-    text-decoration: none;
+    color:
+        rgba(237, 242, 247, 0.48);
 
-    font-size: 12px;
+    text-decoration:
+        none;
 
-    font-weight: 300;
+    font-size:
+        11px;
 
-    letter-spacing: 0.45em;
+    font-weight:
+        300;
+
+    letter-spacing:
+        0.42em;
 
     transition:
-        color 0.45s ease,
-        opacity 0.45s ease,
+        color 0.5s ease,
+        opacity 0.5s ease,
         text-shadow 0.5s ease;
 
 }
@@ -387,13 +369,12 @@ body {
 
 .navigation a:hover {
 
-    color: var(--moon);
-
-    opacity: 0.9;
+    color:
+        rgba(237, 242, 247, 0.92);
 
     text-shadow:
-        0 0 10px
-        rgba(255, 255, 255, 0.055);
+        0 0 12px
+        rgba(237, 242, 247, 0.06);
 
 }
 
@@ -407,43 +388,44 @@ body {
 
     0% {
 
-        opacity: 0;
+        opacity:
+            0;
 
         filter:
             blur(3px);
 
-        letter-spacing:
-            0.08em;
-
         transform:
-            translateY(10px);
+            translateY(9px);
 
     }
 
 
-    18% {
+    20% {
 
-        opacity: 0.18;
+        opacity:
+            0.16;
 
         filter:
-            blur(1.4px);
+            blur(1.5px);
 
     }
 
 
-    32% {
+    42% {
 
-        opacity: 0.46;
+        opacity:
+            0.52;
 
         filter:
-            blur(0);
+            blur(0.4px);
 
     }
 
 
-    68% {
+    72% {
 
-        opacity: 0.82;
+        opacity:
+            0.84;
 
         filter:
             blur(0);
@@ -453,13 +435,11 @@ body {
 
     100% {
 
-        opacity: 0.96;
+        opacity:
+            0.96;
 
         filter:
             blur(0);
-
-        letter-spacing:
-            0.35em;
 
         transform:
             translateY(0);
@@ -478,17 +458,19 @@ body {
 
     from {
 
-        opacity: 0;
+        opacity:
+            0;
 
         transform:
-            translateY(10px);
+            translateY(8px);
 
     }
 
 
     to {
 
-        opacity: 1;
+        opacity:
+            1;
 
         transform:
             translateY(0);
@@ -499,54 +481,24 @@ body {
 
 
 /* ==================================================
-   TAGLINE LIGHT SWEEP
+   TAGLINE MOONLIGHT
 ================================================== */
 
 
-@keyframes taglineLightSweep {
+@keyframes taglineMoonlight {
 
     0% {
 
-        left: -70%;
-
-        opacity: 0;
-
-    }
-
-
-    12% {
-
-        opacity: 0.42;
-
-    }
-
-
-    32% {
-
-        opacity: 1;
-
-    }
-
-
-    66% {
-
-        opacity: 0.84;
-
-    }
-
-
-    88% {
-
-        opacity: 0.32;
+        background-position:
+            125% center;
 
     }
 
 
     100% {
 
-        left: 130%;
-
-        opacity: 0;
+        background-position:
+            -25% center;
 
     }
 
@@ -562,17 +514,19 @@ body {
 
     from {
 
-        opacity: 0;
+        opacity:
+            0;
 
         transform:
-            translate(-50%, 25px);
+            translate(-50%, 18px);
 
     }
 
 
     to {
 
-        opacity: 1;
+        opacity:
+            1;
 
         transform:
             translate(-50%, 0);
@@ -597,20 +551,6 @@ body {
     }
 
 
-    .entrance::before {
-
-        width:
-            min(820px, 96vw);
-
-        height:
-            min(430px, 52vh);
-
-        filter:
-            blur(20px);
-
-    }
-
-
     .hero {
 
         transform:
@@ -619,51 +559,77 @@ body {
     }
 
 
-    .hero h1 {
+    .hero-title {
 
         font-size:
             clamp(
-                1.25rem,
-                5.5vw,
+                1.35rem,
+                5.3vw,
                 2.8rem
             );
 
     }
 
 
+    .brand-word {
+
+        letter-spacing:
+            0.38em;
+
+    }
+
+
+    .brand-word:last-child {
+
+        margin-right:
+            -0.38em;
+
+    }
+
+
     .brand-amp {
 
-        margin-left: 0.42em;
-        margin-right: 0.42em;
+        margin-left:
+            0.62em;
+
+        margin-right:
+            0.62em;
 
     }
 
 
     .tagline {
 
-        margin-top: 30px;
+        margin-top:
+            32px;
 
-        font-size: 0.72rem;
+        font-size:
+            0.7rem;
 
-        letter-spacing: 0.35em;
+        letter-spacing:
+            0.34em;
 
     }
 
 
     .navigation {
 
-        bottom: 10%;
+        bottom:
+            10%;
 
-        gap: 28px;
+        gap:
+            28px;
 
     }
 
 
     .navigation a {
 
-        font-size: 10px;
+        font-size:
+            10px;
 
-        letter-spacing: 0.25em;
+        letter-spacing:
+            0.24em;
 
     }
 
@@ -677,46 +643,63 @@ body {
 
 @media (max-width: 560px) {
 
-    .entrance::before {
+    .entrance {
 
-        width: 98vw;
-        height: 360px;
-
-        opacity: 0.88;
-
-        filter:
-            blur(18px);
+        padding:
+            20px 16px;
 
     }
 
 
-    .hero h1 {
+    .hero-title {
 
         font-size:
             clamp(
                 1rem,
-                5.7vw,
-                1.65rem
+                5.3vw,
+                1.6rem
             );
+
+    }
+
+
+    .brand-word {
+
+        letter-spacing:
+            0.28em;
+
+    }
+
+
+    .brand-word:last-child {
+
+        margin-right:
+            -0.28em;
 
     }
 
 
     .brand-amp {
 
-        margin-left: 0.28em;
-        margin-right: 0.28em;
+        margin-left:
+            0.4em;
 
-        opacity: 0.46;
+        margin-right:
+            0.4em;
 
     }
 
 
     .tagline {
 
-        font-size: 0.64rem;
+        margin-top:
+            27px;
 
-        letter-spacing: 0.26em;
+        font-size:
+            0.61rem;
+
+        letter-spacing:
+            0.24em;
 
     }
 
@@ -726,19 +709,25 @@ body {
         width:
             calc(100% - 36px);
 
+        bottom:
+            9%;
+
         justify-content:
             space-between;
 
-        gap: 0;
+        gap:
+            0;
 
     }
 
 
     .navigation a {
 
-        font-size: 9px;
+        font-size:
+            9px;
 
-        letter-spacing: 0.14em;
+        letter-spacing:
+            0.12em;
 
     }
 
@@ -752,31 +741,41 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
 
-    .hero h1,
-    .tagline,
-    .navigation,
-    .tagline::after {
-
-        animation: none;
-
-    }
-
-
-    .hero h1,
+    .hero-title,
     .tagline,
     .navigation {
 
-        opacity: 1;
+        animation:
+            none;
 
-        filter: none;
+        opacity:
+            1;
+
+        filter:
+            none;
 
     }
 
 
-    .hero h1,
+    .hero-title,
     .tagline {
 
-        transform: none;
+        transform:
+            none;
+
+    }
+
+
+    .tagline {
+
+        color:
+            var(--moon-whisper);
+
+        background:
+            none;
+
+        -webkit-text-fill-color:
+            initial;
 
     }
 
@@ -785,13 +784,6 @@ body {
 
         transform:
             translateX(-50%);
-
-    }
-
-
-    .tagline::after {
-
-        display: none;
 
     }
 
