@@ -82,15 +82,19 @@ body {
 
     white-space: nowrap;
 
-    font-size:
-        clamp(2rem, 5vw, 5rem);
+    font-size: clamp(2rem,5vw,5rem);
 
-    letter-spacing:
-        0.35em;
+    font-weight:300;
 
-    font-weight: 300;
+    opacity:0;
 
-    color: var(--ivory);
+    letter-spacing:.05em;
+
+    animation:
+
+        logoReveal 5s ease forwards;
+
+    animation-delay:1.8s;
 
 }
 
