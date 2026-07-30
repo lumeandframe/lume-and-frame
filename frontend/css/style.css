@@ -1,7 +1,7 @@
 /* ==================================================
    LUME & FRAME
-   The Entrance — Version 06
-   Moonlight Passage
+   The Entrance — Version 07
+   Warm Moonlight Passage
 
    Luce. Forma. Silenzio.
 ================================================== */
@@ -23,6 +23,10 @@
 
     --moon-whisper:
         rgba(237, 242, 247, 0.22);
+
+    --moon-gold: #DCCB96;
+
+    --moon-gold-bright: #F1E4BC;
 
 }
 
@@ -118,6 +122,11 @@ body {
 
     white-space: nowrap;
 
+    display: inline-flex;
+
+    justify-content: center;
+    align-items: center;
+
     font-size:
         clamp(2rem, 5vw, 5rem);
 
@@ -140,6 +149,28 @@ body {
         forwards;
 
     animation-delay: 0.8s;
+
+}
+
+
+.brand-word {
+
+    display: inline-block;
+
+}
+
+
+.brand-amp {
+
+    display: inline-block;
+
+    margin-left: 0.58em;
+    margin-right: 0.58em;
+
+    color:
+        rgba(237, 242, 247, 0.62);
+
+    opacity: 0.42;
 
 }
 
@@ -179,7 +210,7 @@ body {
 
 
 /* ==================================================
-   TAGLINE LIGHT PASSAGE
+   TAGLINE — WARM MOONLIGHT PASSAGE
 ================================================== */
 
 
@@ -205,15 +236,15 @@ body {
 
             transparent 0%,
 
-            rgba(237, 242, 247, 0.06) 30%,
+            rgba(220, 203, 150, 0.04) 28%,
 
-            rgba(237, 242, 247, 0.20) 42%,
+            rgba(220, 203, 150, 0.18) 41%,
 
-            rgba(255, 255, 255, 0.72) 50%,
+            rgba(241, 228, 188, 0.78) 50%,
 
-            rgba(237, 242, 247, 0.20) 58%,
+            rgba(220, 203, 150, 0.18) 59%,
 
-            rgba(237, 242, 247, 0.06) 70%,
+            rgba(220, 203, 150, 0.04) 72%,
 
             transparent 100%
         );
@@ -518,6 +549,14 @@ body {
     }
 
 
+    .brand-amp {
+
+        margin-left: 0.42em;
+        margin-right: 0.42em;
+
+    }
+
+
     .tagline {
 
         margin-top: 30px;
@@ -564,6 +603,16 @@ body {
                 5.7vw,
                 1.65rem
             );
+
+    }
+
+
+    .brand-amp {
+
+        margin-left: 0.28em;
+        margin-right: 0.28em;
+
+        opacity: 0.46;
 
     }
 
