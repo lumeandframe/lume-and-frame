@@ -1,7 +1,7 @@
 /* ==================================================
    LUME & FRAME
-   The Entrance — Version 05
-   Moonlight Inscription
+   The Entrance — Version 06
+   Moonlight Passage
 
    Luce. Forma. Silenzio.
 ================================================== */
@@ -179,22 +179,25 @@ body {
 
 
 /* ==================================================
-   TAGLINE LIGHT
+   TAGLINE LIGHT PASSAGE
 ================================================== */
 
 
 .tagline::after {
 
-    content:
-        "Luce. Forma. Silenzio.";
+    content: "";
 
     position: absolute;
 
-    inset: 0;
+    top: 0;
+    left: -45%;
+
+    width: 24%;
+    height: 100%;
 
     pointer-events: none;
 
-    color: transparent;
+    opacity: 0;
 
     background:
         linear-gradient(
@@ -202,35 +205,27 @@ body {
 
             transparent 0%,
 
-            transparent 36%,
+            rgba(237, 242, 247, 0.06) 30%,
 
-            rgba(237, 242, 247, 0.16) 43%,
+            rgba(237, 242, 247, 0.20) 42%,
 
             rgba(255, 255, 255, 0.72) 50%,
 
-            rgba(237, 242, 247, 0.16) 57%,
+            rgba(237, 242, 247, 0.20) 58%,
 
-            transparent 64%,
+            rgba(237, 242, 247, 0.06) 70%,
 
             transparent 100%
         );
 
-    background-size:
-        240% 100%;
+    filter:
+        blur(2px);
 
-    background-position:
-        -180% 0;
+    transform:
+        skewX(-18deg);
 
-    background-repeat:
-        no-repeat;
-
-    -webkit-background-clip: text;
-    background-clip: text;
-
-    -webkit-text-fill-color:
-        transparent;
-
-    opacity: 0;
+    mix-blend-mode:
+        screen;
 
     animation:
         taglineLightSweep 2.6s
@@ -420,41 +415,39 @@ body {
 
     0% {
 
+        left: -45%;
+
         opacity: 0;
 
-        background-position:
-            -180% 0;
+    }
+
+
+    14% {
+
+        opacity: 0.22;
 
     }
 
 
-    12% {
+    34% {
 
-        opacity: 0.25;
-
-    }
-
-
-    35% {
-
-        opacity: 0.82;
+        opacity: 0.78;
 
     }
 
 
-    72% {
+    68% {
 
-        opacity: 0.58;
+        opacity: 0.62;
 
     }
 
 
     100% {
 
-        opacity: 0;
+        left: 120%;
 
-        background-position:
-            220% 0;
+        opacity: 0;
 
     }
 
