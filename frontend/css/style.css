@@ -1,6 +1,6 @@
 /* ==================================================
    LUME & FRAME
-   The Entrance — Version 02
+   The Entrance — Version 03
 
    Luce. Forma. Silenzio.
 ================================================== */
@@ -30,10 +30,20 @@
 }
 
 
+html,
 body {
 
-    background: var(--navy);
+    width: 100%;
+    min-height: 100%;
 
+}
+
+
+body {
+
+    overflow: hidden;
+
+    background: var(--navy);
     color: var(--ivory);
 
     font-family:
@@ -52,16 +62,17 @@ body {
 
 .entrance {
 
+    position: relative;
+
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
+    min-height: 100svh;
 
     display: flex;
-
     justify-content: center;
-
     align-items: center;
 
-    position: relative;
+    padding: 32px;
 
 }
 
@@ -69,6 +80,8 @@ body {
 .hero {
 
     text-align: center;
+
+    transform: translateY(24px);
 
 }
 
@@ -82,19 +95,21 @@ body {
 
     white-space: nowrap;
 
-    font-size: clamp(2rem,5vw,5rem);
+    font-size:
+        clamp(2rem, 5vw, 5rem);
 
-    font-weight:300;
+    font-weight: 300;
 
-    opacity:0;
+    color: var(--ivory);
 
-    letter-spacing:.05em;
+    opacity: 0;
+
+    letter-spacing: 0.05em;
 
     animation:
-
         logoReveal 5s ease forwards;
 
-    animation-delay:1.8s;
+    animation-delay: 1.8s;
 
 }
 
@@ -106,15 +121,21 @@ body {
 
 .tagline {
 
-    margin-top: 40px;
+    margin-top: 42px;
 
-    font-size: 1.1rem;
+    font-size:
+        clamp(0.72rem, 1.15vw, 1rem);
 
-    letter-spacing:
-        0.5em;
+    letter-spacing: 0.55em;
 
-    color:
-        rgba(248,246,242,0.65);
+    color: var(--ivory);
+
+    opacity: 0;
+
+    animation:
+        taglineReveal 3s ease forwards;
+
+    animation-delay: 6.3s;
 
 }
 
@@ -128,55 +149,44 @@ body {
 
     position: absolute;
 
-    bottom: 14%;
-
     left: 50%;
+    bottom: 14%;
 
     width: max-content;
 
-    transform:
-        translateX(-50%);
-
     display: flex;
-
     justify-content: center;
+    align-items: center;
 
     gap: 70px;
 
     z-index: 20;
 
-
     opacity: 0;
 
+    transform:
+        translate(-50%, 25px);
 
     animation:
-        navigationReveal 2s ease forwards;
+        navigationReveal 2.8s ease forwards;
 
-
-    animation-delay: 3s;
+    animation-delay: 9.2s;
 
 }
-
 
 
 .navigation a {
 
     color:
-        rgba(248,246,242,0.8);
-
+        rgba(248, 246, 242, 0.8);
 
     text-decoration: none;
 
-
     font-size: 12px;
 
-
-    letter-spacing:
-        0.45em;
-
+    letter-spacing: 0.45em;
 
     font-weight: 300;
-
 
     transition:
         opacity 0.4s ease;
@@ -184,10 +194,85 @@ body {
 }
 
 
-
 .navigation a:hover {
 
     opacity: 0.5;
+
+}
+
+
+/* ==================================================
+   LOGO REVEAL
+================================================== */
+
+
+@keyframes logoReveal {
+
+    0% {
+
+        opacity: 0;
+
+        letter-spacing: 0.05em;
+
+        transform:
+            translateY(10px);
+
+    }
+
+
+    30% {
+
+        opacity: 0.15;
+
+    }
+
+
+    70% {
+
+        opacity: 0.85;
+
+    }
+
+
+    100% {
+
+        opacity: 1;
+
+        letter-spacing: 0.35em;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* ==================================================
+   TAGLINE REVEAL
+================================================== */
+
+
+@keyframes taglineReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(12px);
+
+    }
+
+
+    to {
+
+        opacity: 0.42;
+
+        transform:
+            translateY(0);
+
+    }
 
 }
 
@@ -199,13 +284,12 @@ body {
 
 @keyframes navigationReveal {
 
-
     from {
 
         opacity: 0;
 
         transform:
-            translate(-50%,20px);
+            translate(-50%, 25px);
 
     }
 
@@ -215,9 +299,136 @@ body {
         opacity: 1;
 
         transform:
-            translate(-50%,0);
+            translate(-50%, 0);
 
     }
 
+}
+
+
+/* ==================================================
+   RESPONSIVE — TABLET AND MOBILE
+================================================== */
+
+
+@media (max-width: 900px) {
+
+    .entrance {
+
+        padding:
+            24px 18px;
+
+    }
+
+
+    .hero {
+
+        width: 100%;
+
+        transform:
+            translateY(0);
+
+    }
+
+
+    .hero h1 {
+
+        font-size:
+            clamp(1.25rem, 5.5vw, 2.8rem);
+
+    }
+
+
+    .tagline {
+
+        margin-top: 30px;
+
+        font-size: 0.72rem;
+
+        letter-spacing: 0.35em;
+
+    }
+
+
+    .navigation {
+
+        bottom: 10%;
+
+        gap: 28px;
+
+    }
+
+
+    .navigation a {
+
+        font-size: 10px;
+
+        letter-spacing: 0.25em;
+
+    }
+
+}
+
+
+@media (max-width: 560px) {
+
+    .hero h1 {
+
+        font-size:
+            clamp(1rem, 5.7vw, 1.65rem);
+
+    }
+
+
+    .navigation {
+
+        width:
+            calc(100% - 36px);
+
+        justify-content:
+            space-between;
+
+        gap: 0;
+
+    }
+
+
+    .navigation a {
+
+        font-size: 9px;
+
+        letter-spacing: 0.14em;
+
+    }
+
+}
+
+
+/* ==================================================
+   REDUCED MOTION
+================================================== */
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hero h1,
+    .tagline,
+    .navigation {
+
+        animation: none;
+
+        opacity: 1;
+
+        transform: none;
+
+    }
+
+
+    .navigation {
+
+        transform:
+            translateX(-50%);
+
+    }
 
 }
