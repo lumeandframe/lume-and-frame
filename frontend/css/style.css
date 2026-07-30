@@ -1,6 +1,6 @@
 /* ==================================================
    LUME & FRAME
-   The Entrance — Version 03
+   The Entrance — Version 04
 
    Luce. Forma. Silenzio.
 ================================================== */
@@ -12,6 +12,10 @@
     --ivory: #F8F6F2;
     --charcoal: #2B2B2B;
     --gold: #C9A227;
+
+    --moonlight: #EEF2F4;
+    --warm-light: #E7D7B7;
+    --soft-gold: #D6BD72;
 
 }
 
@@ -100,16 +104,21 @@ body {
 
     font-weight: 300;
 
-    color: var(--ivory);
+    color: var(--moonlight);
+
+    text-shadow:
+        0 0 18px rgba(238, 242, 244, 0.05);
 
     opacity: 0;
 
     letter-spacing: 0.05em;
 
-  animation:
-    logoReveal 3.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation:
+        logoReveal 3.2s
+        cubic-bezier(0.22, 1, 0.36, 1)
+        forwards;
 
-animation-delay: 0.8s;
+    animation-delay: 0.8s;
 
 }
 
@@ -121,6 +130,12 @@ animation-delay: 0.8s;
 
 .tagline {
 
+    position: relative;
+
+    display: inline-block;
+
+    overflow: hidden;
+
     margin-top: 42px;
 
     font-size:
@@ -128,13 +143,56 @@ animation-delay: 0.8s;
 
     letter-spacing: 0.55em;
 
-    color: var(--ivory);
+    color: var(--warm-light);
+
+    text-shadow:
+        0 0 14px rgba(231, 215, 183, 0.08);
 
     opacity: 0;
 
-    animation: taglineReveal 1.8s ease forwards;
+    animation:
+        taglineReveal 1.8s ease forwards;
 
-animation-delay: 3.4s;
+    animation-delay: 3.4s;
+
+}
+
+
+.tagline::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -45%;
+
+    width: 24%;
+    height: 100%;
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    background:
+        linear-gradient(
+            100deg,
+            transparent 0%,
+            rgba(255, 244, 214, 0.08) 38%,
+            rgba(255, 249, 231, 0.28) 50%,
+            rgba(255, 244, 214, 0.08) 62%,
+            transparent 100%
+        );
+
+    filter: blur(2px);
+
+    transform:
+        skewX(-18deg);
+
+    animation:
+        taglineLightSweep 1.5s ease-out forwards;
+
+    animation-delay: 4.2s;
 
 }
 
@@ -166,9 +224,10 @@ animation-delay: 3.4s;
     transform:
         translate(-50%, 25px);
 
-    animation: navigationReveal 1.4s ease forwards;
+    animation:
+        navigationReveal 1.4s ease forwards;
 
-animation-delay: 4.8s;
+    animation-delay: 4.8s;
 
 }
 
@@ -176,7 +235,7 @@ animation-delay: 4.8s;
 .navigation a {
 
     color:
-        rgba(248, 246, 242, 0.8);
+        rgba(238, 242, 244, 0.8);
 
     text-decoration: none;
 
@@ -187,14 +246,21 @@ animation-delay: 4.8s;
     font-weight: 300;
 
     transition:
-        opacity 0.4s ease;
+        color 0.5s ease,
+        opacity 0.5s ease,
+        text-shadow 0.5s ease;
 
 }
 
 
 .navigation a:hover {
 
-    opacity: 0.5;
+    color: var(--soft-gold);
+
+    opacity: 1;
+
+    text-shadow:
+        0 0 12px rgba(214, 189, 114, 0.18);
 
 }
 
@@ -214,11 +280,13 @@ animation-delay: 4.8s;
 
     }
 
+
     18% {
 
         opacity: 0;
 
     }
+
 
     42% {
 
@@ -226,11 +294,13 @@ animation-delay: 4.8s;
 
     }
 
+
     68% {
 
         opacity: 0.78;
 
     }
+
 
     100% {
 
@@ -266,6 +336,45 @@ animation-delay: 4.8s;
 
         transform:
             translateY(0);
+
+    }
+
+}
+
+
+/* ==================================================
+   TAGLINE LIGHT SWEEP
+================================================== */
+
+
+@keyframes taglineLightSweep {
+
+    0% {
+
+        left: -45%;
+        opacity: 0;
+
+    }
+
+
+    18% {
+
+        opacity: 0.8;
+
+    }
+
+
+    75% {
+
+        opacity: 0.55;
+
+    }
+
+
+    100% {
+
+        left: 120%;
+        opacity: 0;
 
     }
 
@@ -408,11 +517,25 @@ animation-delay: 4.8s;
 
     .hero h1,
     .tagline,
-    .navigation {
+    .navigation,
+    .tagline::after {
 
         animation: none;
 
+    }
+
+
+    .hero h1,
+    .tagline,
+    .navigation {
+
         opacity: 1;
+
+    }
+
+
+    .hero h1,
+    .tagline {
 
         transform: none;
 
@@ -423,6 +546,13 @@ animation-delay: 4.8s;
 
         transform:
             translateX(-50%);
+
+    }
+
+
+    .tagline::after {
+
+        display: none;
 
     }
 
